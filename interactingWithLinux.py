@@ -14,7 +14,7 @@ accel_20_patt = "[]+244+[0-9,A-D]"
 # 3) When working with cangen(random) traffic lets identify 
 #       left/right turn signal--> ID 188#01...for left & ID 188#02...right
 #        & 20 mph--> ID 244#...followed by any value above 0 will register
-#        on the speedometer from my understanding, wdyt, Javier?
+#        on the speedometer from my understanding, wdyt?
 
 # traff_w_time recorded the following event: right signal(x2), left signal(x1),
 # then accel to 20 then drop to zero
