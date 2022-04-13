@@ -3,7 +3,6 @@ import sys
 import re
 import subprocess
 #import numpy as np
-
 data_pattern = "#+[]"
 left_t_patt = "[]+188+01+[0-9,A-D]"
 right_t_patt = "[]+188+02+[0-9,A-D]"
@@ -25,7 +24,7 @@ with open('traff_w_time', "r") as f: # its in hex
 with open('traff_rand_gen', "r") as f: # its in hex
     packets_rand = f.readlines()                  # 20k lines
 
-def firstNodeEncountered(logFile):
+def firstNode(logFile):
     per_line = [i.split(' ') for i in logFile]
     curr_nodeID = per_line[0][2][:3]
     print('first line', per_line[0])
@@ -46,12 +45,9 @@ def allNodesEncountered(logFile):
         print(f'Node ID: {k} (instances {d[k]})')
     print(f'{len(d)} nodes encountered')
 
-    #print('first line', per_line[0])
-    #print(f'nodes {allNodes[2]}')
-
-#firstNodeEncountered(packets_time)
-#firstNodeEncountered(packets_rand)
+#firstNode(packets_time)
+#firstNode(packets_rand)
 allNodesEncountered(packets_time)
-#allNodesEncountered(packets_rand)
+allNodesEncountered(packets_rand)
 
 # At some point afterwards we could do some performance analysis
